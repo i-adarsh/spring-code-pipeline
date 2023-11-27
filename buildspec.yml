@@ -28,10 +28,10 @@ phases:
       - echo setting container name...
       - DOCKER_CONTAINER_NAME=spring-cicd-pipeline
       - echo writing image definitions file...
-      - printf '[{"name":"%s", "imageUri":"%s"}]' $DOCKER_CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG > imageDefinitions.json
+      - printf '[{"name":"%s", "imageUri":"%s"}]' $DOCKER_CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - echo DOCKER_CONTAINER_NAME
-      - echo printing imageDefinitions.json
-      - cat imageDefinitions.json
+      - echo printing imagedefinitions.json
+      - cat imagedefinitions.json
 artifacts:
   files:
-    - imageDefinitions.json
+    - imagedefinitions.json

@@ -8,9 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping
 public class TestController {
     @GetMapping
+    public ResponseEntity<Map<String, String>> healthCheck(){
+        return ResponseEntity.ok().body(Map.of("Status", "Running ..."));
+    }
+    @GetMapping("/test")
     public ResponseEntity<Map<String, String>> test(){
         return ResponseEntity.ok().body(Map.of("Testing", "Server is running ... "));
     }

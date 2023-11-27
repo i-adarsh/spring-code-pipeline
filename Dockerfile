@@ -7,7 +7,7 @@ COPY . /app
 RUN mvn clean
 RUN mvn package -DskipTests -X
 
-FROM openjdk:17
+FROM public.ecr.aws/g6s0o6c5/openjdk17.0.1:latest
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE ${CONTAINER_PORT}
 CMD ["java", "-jar", "app.jar"]
